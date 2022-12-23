@@ -1,0 +1,22 @@
+{
+    "id": 1982888,
+    "category": {
+        "id": 22,
+        "name": "cat"
+    },
+    "name": "Zoba",
+    "photoUrls": [
+        "string"
+    ],
+    "tags": [
+        {
+            "id": 15,
+            "name": "Jackie"
+        },
+         {
+            "id": 16,
+            "name": "Tonna"
+        }
+    ],
+    "status": "available"
+}

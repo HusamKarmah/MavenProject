@@ -1,0 +1,22 @@
+{
+    "id": 19888,
+    "category": {
+        "id": 22,
+        "name": "cat"
+    },
+    "name": "Nancy",
+    "photoUrls": [
+        "string"
+    ],
+    "tags": [
+        {
+            "id": 15,
+            "name": "Jackie"
+        },
+         {
+            "id": 16,
+            "name": "Kaisey"
+        }
+    ],
+    "status": "available"
+}

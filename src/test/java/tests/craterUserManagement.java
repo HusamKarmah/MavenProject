@@ -1,3 +1,5 @@
+
+
 package tests;
 import org.testng.annotations.Test;
 import pages.caterDashboardPage;
@@ -81,7 +83,6 @@ public class craterUserManagement {
 	 names [2][0] = ""; 
 	 names [2][1] = "validpassword"; 
 	 
-	 
 	 names [3][0] = "invalidemail@yahoo.com"; 
 	 names [3][1] = ""; 
 	 
@@ -92,10 +93,6 @@ public class craterUserManagement {
   public void setUp() {
 	  
 	 Driver.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS); 
-	 
-	 
-	 
-	  
 	  
   }
 

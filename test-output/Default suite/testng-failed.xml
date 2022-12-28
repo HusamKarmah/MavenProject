@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.craterUserManagement">
+      <class name="tests.CrateItemsTests">
         <methods>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="invalidLogin" invocation-numbers="2 3"/>
+          <include name="setup"/>
+          <include name="wraper"/>
+          <include name="craeteItem"/>
         </methods>
-      </class> <!-- tests.craterUserManagement -->
+      </class> <!-- tests.CrateItemsTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

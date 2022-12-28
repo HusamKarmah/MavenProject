@@ -5,6 +5,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utils.Driver;
+import utils.TestDataReader;
 
 public class craterLoginPage {
 	
@@ -43,6 +44,15 @@ public class craterLoginPage {
 	
 	@FindBy(xpath = "//span[text()='Field is required']")
 	public WebElement fieldRequired; 
+	
+	
+	public void login() throws InterruptedException {
+		 useremail.sendKeys(TestDataReader.getProperty("craterVaildEmail"));
+		  Thread.sleep(1000);
+		 password.sendKeys(TestDataReader.getProperty("craterValidPassword"));
+		  Thread.sleep(1000);
+		  loginButton.click();
+	}
 	
 
 }

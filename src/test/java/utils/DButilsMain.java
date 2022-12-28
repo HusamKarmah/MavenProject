@@ -51,7 +51,7 @@ private static String dbHostName = "jdbc:mysql://stack-overflow.cfse9bqqndon.us-
 	String query1 = "update customers set name  = 'Polat' where id ='1'"; 
 	
 	try {
-		Connection connect = DriverManager.getConnection(dbHostName,username, password  );
+		Connection connect = DriverManager.getConnection(dbHostName,username, password);
 		Statement statement = connect.createStatement(); 
 		statement.executeUpdate(query1);
 		connect.close();

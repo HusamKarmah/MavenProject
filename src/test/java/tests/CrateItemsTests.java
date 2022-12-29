@@ -75,7 +75,6 @@ public class CrateItemsTests {
 	  String query ="select*from items where name='Black sungalsses'"; 
 	  List <String> itemData = dbutils.selectArecord(query); 
 	  System.out.println(itemData);
-	  
 	  Assert.assertEquals(itemData.get(1), "Black sungalsses");
 	  
 

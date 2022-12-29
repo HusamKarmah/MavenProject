@@ -1,6 +1,7 @@
 package utils;
 
 import java.util.NoSuchElementException;
+import java.util.Random;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
@@ -108,7 +109,13 @@ public class BrowserUtils {
 		element.sendKeys(Keys.DELETE);
 	}
 	
-	
+	// Random 3 digit number generator 
+	public int randomNumber() {
+		Random rand = new Random(); 
+		int randomNum = rand.nextInt((999-100) + 1) + 100;  
+		
+		return randomNum; 
+	}
 	
 
 }

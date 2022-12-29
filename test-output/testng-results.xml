@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-28T13:07:54 EST" name="Default suite" finished-at="2022-12-28T13:08:08 EST" duration-ms="14454">
+  <suite started-at="2022-12-28T21:25:53 EST" name="Default suite" finished-at="2022-12-28T21:26:09 EST" duration-ms="16006">
     <groups>
     </groups>
-    <test started-at="2022-12-28T13:07:54 EST" name="Default test" finished-at="2022-12-28T13:08:08 EST" duration-ms="14454">
+    <test started-at="2022-12-28T21:25:53 EST" name="Default test" finished-at="2022-12-28T21:26:09 EST" duration-ms="16006">
       <class name="tests.CrateItemsTests">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.CrateItemsTests@1cefc4b3]" started-at="2022-12-28T13:07:54 EST" name="setup" finished-at="2022-12-28T13:07:59 EST" duration-ms="5072" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.CrateItemsTests@1cefc4b3]" started-at="2022-12-28T21:25:53 EST" name="setup" finished-at="2022-12-28T21:25:58 EST" duration-ms="5300" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="craeteItem()[pri:0, instance:tests.CrateItemsTests@1cefc4b3]" started-at="2022-12-28T13:07:59 EST" name="craeteItem" finished-at="2022-12-28T13:08:07 EST" duration-ms="7477" status="PASS">
+        <test-method signature="craeteItem()[pri:0, instance:tests.CrateItemsTests@1cefc4b3]" started-at="2022-12-28T21:25:58 EST" name="craeteItem" finished-at="2022-12-28T21:26:07 EST" duration-ms="8913" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- craeteItem -->
-        <test-method is-config="true" signature="wraper()[pri:0, instance:tests.CrateItemsTests@1cefc4b3]" started-at="2022-12-28T13:08:07 EST" name="wraper" finished-at="2022-12-28T13:08:08 EST" duration-ms="1827" status="PASS">
+        <test-method is-config="true" signature="wraper()[pri:0, instance:tests.CrateItemsTests@1cefc4b3]" started-at="2022-12-28T21:26:07 EST" name="wraper" finished-at="2022-12-28T21:26:09 EST" duration-ms="1684" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- wraper -->

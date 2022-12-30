@@ -17,7 +17,7 @@ public class BrowserUtils {
 	Alert alert;
 	WebDriverWait letswait;
 	Select letsSelect;
-	Actions act;
+	Actions action;
 
 	// this function waits 5 seconds for an alert to be present on the UI
 	public void waitUntilAlertIsPresent() {
@@ -76,14 +76,21 @@ public class BrowserUtils {
 	// This function accepts a web element and moves the mouse cursor to that element. 
 	// hover over to an element
 	public void moveToElement(WebElement element) {
-		act = new Actions(Driver.getDriver());
-		act.moveToElement(element).perform();
+		action = new Actions(Driver.getDriver());
+		action.moveToElement(element).perform();
 	}
+	
+	
+	public void sendKeyswithActionsClass(WebElement element, String text) {
+		action = new Actions(Driver.getDriver()); 
+		action.sendKeys(element, text).build().perform(); 
+	}
+	
 	
 	// drag the source element to the target element
 	public void dragAndDrop(WebElement sourceElement, WebElement targetElement) {
-		act = new Actions(Driver.getDriver());
-		act.dragAndDrop(sourceElement, targetElement).perform();
+		action = new Actions(Driver.getDriver());
+		action.dragAndDrop(sourceElement, targetElement).perform();
 	}
 
 	// This method is for deleting the pre-populated value of an input field with
@@ -98,7 +105,7 @@ public class BrowserUtils {
 	// This method is for deleting the pre-populated value of an input field with
 	// control + a keys event for windows
 	public void clearTextOfTheFieldWindows(WebElement element) {
-		element.sendKeys(Keys.chord(Keys.CONTROL), "a");
+		element.sendKeys(Keys.chord(Keys.CONTROL, "a"));
 		element.sendKeys(Keys.DELETE);
 	}
 

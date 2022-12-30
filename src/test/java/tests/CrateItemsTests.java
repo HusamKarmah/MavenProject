@@ -31,8 +31,10 @@ public class CrateItemsTests {
 	/*
 	 * Create an item on UI. Then go to database, and query from the items table
 	 * using select * to get the information Then verify the information that you
-	 * have provided on UI is correct. Then update your Item on the UI, come back to
-	 * database and verify the update is in effect. Then delete the Item on the UI,
+	 * have provided on UI is correct. 
+	 * Then update your Item on the UI, come back to
+	 * database and verify the update is in effect. 
+	 * Then delete the Item on the UI,
 	 * come back to database and verify the estimate no longer exist.
 	 * CraterCommonPage commonpage
 	 */
@@ -66,7 +68,7 @@ public class CrateItemsTests {
 		// click on pc unit
 		itempage.pc_unit.click();
 		// give description
-		itempage.addItemDescription.sendKeys("Variety colors, soild protection, free shipping");
+		itempage.addItemDescription.sendKeys("Variety colors, solid protection, free shipping");
 		// click on save item button
 		itempage.saveitemButton.click();
 
@@ -86,12 +88,69 @@ public class CrateItemsTests {
 		System.out.println("Item Name: " + itemData.get(1));
 		// verify item created with database 
 		Assert.assertEquals(itemData.get(1), newItemName);
+		
+
+		//Then update your Item on the UI. 
+		newItem.click(); 
+		//verify user is on the edit item page 
+		Assert.assertTrue(itempage.editItemHeaderText.isDisplayed()); 
+		
+		// Edit the item description 
+		
+		//Clear the description field 
+		utils.clearTextOfTheFieldWindows(itempage.addItemDescription); 
+		
+		//Send the new description
+		itempage.addItemDescription.sendKeys("New colors are arrived, free shipping all over USA"); 
+		
+		//Click the update button
+		itempage.updateItemButton.click(); 
+		// wait for the update message showing up
+		utils.waitUntilElementVisible(itempage.itemUpdatedSuccessMessage); 
+		
+		//Verify the message is visible
+		Assert.assertTrue(itempage.itemUpdatedSuccessMessage.isDisplayed()); 
+		
+		
+		//come back to database and verify the update is in effect. 
+		
+		System.out.println("New Item added with number: " + newItemName);
+		dbutils = new DButils();
+		String updateQuery = "select*from items where name='" + newItemName + "';";
+		List<String> itemUpdateData = dbutils.selectArecord(updateQuery);
+		System.out.println("Item updated description: " + itemUpdateData.get(2));
+		// verify item description is updated in database 
+		Assert.assertEquals(itemUpdateData.get(2),"New colors are arrived, free shipping all over USA");
+		
+		 //Then delete the Item on the UI.
+		 //come back to database and verify the estimate no longer exist.
+		
+		//(//a[text()='"+newItemName+"']//parent::td)//following-sibling::td[4]//button"
+	
+		// finding the 3 dots and click it
+		Driver.getDriver().findElement
+			(By.xpath("(//a[text()='"+newItemName+"']//parent::td)//following-sibling::td[4]//button")).click(); 
+		
+		// click on delete button
+		utils.waitUntilElementVisible(itempage.deleteitemButton); 
+		itempage.deleteitemButton.click(); 
+		utils.waitUntilElementVisible(itempage.deleteOkButton); 
+		itempage.deleteOkButton.click(); 
+		
+		//verify the delete message displayed
+		utils.waitUntilElementVisible(itempage.itemDeletedSuccessMessage); 
+		Assert.assertTrue(itempage.itemDeletedSuccessMessage.isDisplayed()); 
+		
+		// Database query and verify the item is no longer exist 
+		String deleteQuery = "select*from items where name='" + newItemName + "';";
+		List<String> itemDeleteData = dbutils.selectArecord(deleteQuery);
+		Assert.assertTrue(itemDeleteData.isEmpty()); 
 	}
 
 	// we need to set up some wait before each function to allow driver enough
 	// processing time
 	@BeforeMethod
-	public void setup() throws InterruptedException {
+	public void setup() throws InterruptedException{
 		loginpage = new craterLoginPage();
 		Driver.getDriver().get(TestDataReader.getProperty("craterUrl"));
 		loginpage.login();

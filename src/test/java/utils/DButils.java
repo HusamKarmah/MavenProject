@@ -10,36 +10,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DButils {
-	
+
 	private static String dbHostName = TestDataReader.getProperty("dbhosturl");
 	private static String username = TestDataReader.getProperty("dbusername");
 	private static String password = TestDataReader.getProperty("dbpassword");
-	
+
 	private Connection connection;
 	private Statement statement;
 	private ResultSet resultset;
 	private ResultSetMetaData rsmd;
-	
+
 	// this function accepts a sql query and gets the record.
-	public List<String> selectArecord(String query){
+	public List<String> selectArecord(String query) {
 		List<String> list = new ArrayList<>();
 		try {
 			connection = DriverManager.getConnection(dbHostName, username, password);
 			statement = connection.createStatement();
 			resultset = statement.executeQuery(query);
 			rsmd = resultset.getMetaData();
-			resultset.next();
-		    for (int i = 1; i <= rsmd.getColumnCount(); i++) {
-		    	list.add(resultset.getString(i));
+			if (resultset.next() == true) {
+				for (int i = 1; i <= rsmd.getColumnCount(); i++) {
+					list.add(resultset.getString(i));
+				}
+
 			}
-		    connection.close();
+
+			connection.close();
 		} catch (SQLException e) {
 			System.out.println("DB connection Not established.");
 			e.printStackTrace();
 		}
 		return list;
- 	}
-	
+	}
+
 	// this function accepts an insert sql query and inserts a record.
 	public void insertRecord(String insertQuery) {
 		try {
@@ -53,7 +56,7 @@ public class DButils {
 			e.printStackTrace();
 		}
 	}
-	
+
 	// this function accepts an update sql query and updates it.
 	public void updateRecord(String updateQuery) {
 		try {
@@ -67,7 +70,7 @@ public class DButils {
 			e.printStackTrace();
 		}
 	}
-	
+
 	// this function accepts a delete sql query and deletes it.
 	public void deleteRecord(String deleteQuery) {
 		try {
@@ -81,8 +84,7 @@ public class DButils {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
 	public static void main(String[] args) {
 		String query = "SELECT id, name, email, phone FROM customers where name='John Smith'";
 		try {
@@ -91,18 +93,18 @@ public class DButils {
 			Statement statement = connect.createStatement();
 			ResultSet resultset = statement.executeQuery(query);
 			ResultSetMetaData rsmd = resultset.getMetaData();
-			
+
 			resultset.next();
-			
+
 			System.out.println("First index id is: " + resultset.getString(1));
 			System.out.println("Column name for 3rd column is: " + rsmd.getColumnName(3));
 			System.out.println("Column count is: " + rsmd.getColumnCount());
-			
+
 			List<String> johnsmith = new ArrayList<>();
 			for (int i = 1; i <= rsmd.getColumnCount(); i++) {
 				johnsmith.add(resultset.getString(i));
 			}
-			
+
 			for (String str : johnsmith) {
 				System.out.println(str);
 			}
@@ -112,6 +114,5 @@ public class DButils {
 			e.printStackTrace();
 		}
 	}
-			
 
 }

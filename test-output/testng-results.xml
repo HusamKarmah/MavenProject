@@ -1,25 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="9" passed="9" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-28T21:25:53 EST" name="Default suite" finished-at="2022-12-28T21:26:09 EST" duration-ms="16006">
+  <suite started-at="2022-12-29T19:45:33 EST" name="Default suite" finished-at="2022-12-29T19:45:39 EST" duration-ms="6687">
     <groups>
     </groups>
-    <test started-at="2022-12-28T21:25:53 EST" name="Default test" finished-at="2022-12-28T21:26:09 EST" duration-ms="16006">
-      <class name="tests.CrateItemsTests">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.CrateItemsTests@1cefc4b3]" started-at="2022-12-28T21:25:53 EST" name="setup" finished-at="2022-12-28T21:25:58 EST" duration-ms="5300" status="PASS">
+    <test started-at="2022-12-29T19:45:33 EST" name="Default test" finished-at="2022-12-29T19:45:39 EST" duration-ms="6687">
+      <class name="petStoteApi.petStoreApiTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:petStoteApi.petStoreApiTest@6973b51b]" started-at="2022-12-29T19:45:33 EST" name="setUp" finished-at="2022-12-29T19:45:34 EST" duration-ms="1566" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="craeteItem()[pri:0, instance:tests.CrateItemsTests@1cefc4b3]" started-at="2022-12-28T21:25:58 EST" name="craeteItem" finished-at="2022-12-28T21:26:07 EST" duration-ms="8913" status="PASS">
+        </test-method> <!-- setUp -->
+        <test-method signature="addPet()[pri:0, instance:petStoteApi.petStoreApiTest@6973b51b]" started-at="2022-12-29T19:45:34 EST" name="addPet" finished-at="2022-12-29T19:45:37 EST" duration-ms="2360" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- craeteItem -->
-        <test-method is-config="true" signature="wraper()[pri:0, instance:tests.CrateItemsTests@1cefc4b3]" started-at="2022-12-28T21:26:07 EST" name="wraper" finished-at="2022-12-28T21:26:09 EST" duration-ms="1684" status="PASS">
+        </test-method> <!-- addPet -->
+        <test-method signature="invalidI()[pri:0, instance:petStoteApi.petStoreApiTest@6973b51b]" started-at="2022-12-29T19:45:37 EST" name="invalidI" finished-at="2022-12-29T19:45:38 EST" duration-ms="1214" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- wraper -->
-      </class> <!-- tests.CrateItemsTests -->
+        </test-method> <!-- invalidI -->
+        <test-method signature="postACat()[pri:0, instance:petStoteApi.petStoreApiTest@6973b51b]" started-at="2022-12-29T19:45:38 EST" name="postACat" finished-at="2022-12-29T19:45:38 EST" duration-ms="161" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postACat -->
+        <test-method signature="postAfish()[pri:0, instance:petStoteApi.petStoreApiTest@6973b51b]" started-at="2022-12-29T19:45:38 EST" name="postAfish" finished-at="2022-12-29T19:45:38 EST" duration-ms="176" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postAfish -->
+        <test-method signature="getPetByStatus()[pri:0, instance:petStoteApi.petStoreApiTest@6973b51b]" started-at="2022-12-29T19:45:38 EST" name="getPetByStatus" finished-at="2022-12-29T19:45:38 EST" duration-ms="136" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getPetByStatus -->
+        <test-method signature="postCatJson()[pri:0, instance:petStoteApi.petStoreApiTest@6973b51b]" started-at="2022-12-29T19:45:38 EST" name="postCatJson" finished-at="2022-12-29T19:45:39 EST" duration-ms="154" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- postCatJson -->
+        <test-method signature="getPetbyId()[pri:0, instance:petStoteApi.petStoreApiTest@6973b51b]" started-at="2022-12-29T19:45:39 EST" name="getPetbyId" finished-at="2022-12-29T19:45:39 EST" depends-on-methods="petStoteApi.petStoreApiTest.postACat" duration-ms="100" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getPetbyId -->
+        <test-method signature="updateCat()[pri:0, instance:petStoteApi.petStoreApiTest@6973b51b]" started-at="2022-12-29T19:45:39 EST" name="updateCat" finished-at="2022-12-29T19:45:39 EST" depends-on-methods="petStoteApi.petStoreApiTest.postACat" duration-ms="138" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateCat -->
+        <test-method signature="getAssertById()[pri:0, instance:petStoteApi.petStoreApiTest@6973b51b]" started-at="2022-12-29T19:45:39 EST" name="getAssertById" finished-at="2022-12-29T19:45:39 EST" depends-on-methods="petStoteApi.petStoreApiTest.postACat, petStoteApi.petStoreApiTest.updateCat" duration-ms="329" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getAssertById -->
+        <test-method is-config="true" signature="cleanUp()[pri:0, instance:petStoteApi.petStoreApiTest@6973b51b]" started-at="2022-12-29T19:45:39 EST" name="cleanUp" finished-at="2022-12-29T19:45:39 EST" duration-ms="278" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUp -->
+      </class> <!-- petStoteApi.petStoreApiTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

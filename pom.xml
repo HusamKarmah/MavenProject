@@ -48,7 +48,7 @@
 	</dependencies>
 	<profiles>
 		<profile>
-			<id>ApiTests</id>
+			<id>petApiTests</id>
 			<build>
 				<plugins>
 					<plugin>
@@ -65,5 +65,6 @@
 				</plugins>
 			</build>
 		</profile>
+		
 	</profiles>
 </project>

@@ -4,7 +4,6 @@
 	<test name="UI-RegressionTests">
 		<classes>
 			<class name="tests.SignupTests"></class>
-			<class name="tests.CrateItemsTests"></class>
 			<class name="tests.craterUserManagement"></class>
 			<class name="tests.AmazonSearch"></class>
 		</classes>

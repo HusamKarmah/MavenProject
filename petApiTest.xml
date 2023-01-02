@@ -6,8 +6,5 @@
 		<classes>
 			<class name="petStoteApi.petStoreApiTest"></class>
 		</classes>
-		
-		
-		
 	</test>
 </suite>
